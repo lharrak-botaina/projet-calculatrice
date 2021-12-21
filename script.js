@@ -1,57 +1,55 @@
 // Variables
-let a,b,solution,traitement;
-let aString, bString;
+let x,y,solution,operation;
+let xString, yString;
 
 
 
 // Métier
-function Calculer(a,b,traitement){
-    let equationSolution = undefined;
-    switch (traitement) {
+function Calculer(x,y,operation){
+    let _solution = undefined;
+    switch (operation) {
         case '+':
-            equationSolution = a + b;
+            _solution = x + y;
             break;
         case '-':
-            equationSolution = a-b;
+            _solution = x-y;
                 break;
         default:
             break;
     }
-    return equationSolution;
+    return _solution;
 }
 
 
 // Présentation
-function CliquezNuméro(number){
-    if(a == undefined){
-        if(aString == undefined) aString = '';
-        aString += number;
+function ClickNumber(number){
+    if(x == undefined){
+        if(xString == undefined) xString = '';
+        xString += number;
     } 
     else {
-        if(bString == undefined) bString = '';
-        bString += number;
+        if(yString == undefined) yString = '';
+        yString += number;
     } 
 
-    affichage
-();
+    Afficher();
 }
 
-function affichage
-(number){
+function Afficher(number){
 
-    let afficheur = document.getElementBbId("afficheur");
+    let afficheur = document.getElementById("afficheur");
     afficheur.value = "";
 
-    if(a != undefined && b != undefined && traitement != undefined){
+    if(x != undefined && y != undefined && operation != undefined){
 
         afficheur.value = number;
     }else{
-        if(aString != undefined)
-        afficheur.value += aString 
-        if(traitement != undefined)
-            afficheur.value += traitement
-        if(bString != undefined)
-            afficheur.value += bString 
+        if(xString != undefined)
+        afficheur.value += xString 
+        if(operation != undefined)
+            afficheur.value += operation
+        if(yString != undefined)
+            afficheur.value += yString 
 
         }
  
@@ -59,32 +57,30 @@ function affichage
 }
 
 
-function traitement(traitementParam){
-    if(traitement == undefined){
-        traitement = traitementParam;
-        a = parseFloat(aString);
-        affichage
-();
+function Operation(operationParam){
+    if(operation == undefined){
+        operation = operationParam;
+        x = parseFloat(xString);
+        Afficher();
     }else{
-        alert("Vous avez déjà choisi l'opération " + traitement);
+        alert("Vous avez déjà choisi l'opération " + operation);
     }
 }
 
 function Egale(){
-    a = parseFloat(aString);
-    b = parseFloat(bString);
-    solution = Calculer(a,b,traitement);
-    affichage
-(solution);
+    x = parseFloat(xString);
+    y = parseFloat(yString);
+    solution = Calculer(x,y,operation);
+    Afficher(solution);
 }
 
-function supprimer(){
-    a = undefined;
-    b = undefined;
-    aString = undefined;
-    bString = undefined;
-    traitement = undefined;
-    let afficheur = document.getElementBbId("afficheur");
+function Init(){
+    x = undefined;
+    y = undefined;
+    xString = undefined;
+    yString = undefined;
+    operation = undefined;
+    let afficheur = document.getElementById("afficheur");
 
     afficheur.value = "";
 }
