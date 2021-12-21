@@ -4,21 +4,21 @@ let xString, yString;
 
 
 
-// // Métier
-// function Calculer(x,y,operation){
-//     let _solution = undefined;
-//     switch (operation) {
-//         case '+':
-//             _solution = x + y;
-//             break;
-//         case '-':
-//             _solution = x-y;
-//                 break;
-//         default:
-//             break;
-//     }
-//     return _solution;
-// }
+// Métier
+function Calculer(x,y,operation){
+    let _solution = undefined;
+    switch (operation) {
+        case '+':
+            _solution = x + y;
+            break;
+        case '-':
+            _solution = x-y;
+                break;
+        default:
+            break;
+    }
+    return _solution;
+}
 
 
 // Présentation
@@ -35,26 +35,26 @@ function ClickNumber(number){
     Afficher();
 }
 
-// function Afficher(number){
+function Afficher(number){
 
-//     let afficheur = document.getElementById("afficheur");
-//     afficheur.value = "";
+    let afficheur = document.getElementById("afficheur");
+    afficheur.value = "";
 
-//     if(x != undefined && y != undefined && operation != undefined){
+    if(x != undefined && y != undefined && operation != undefined){
 
-//         afficheur.value = number;
-//     }else{
-//         if(xString != undefined)
-//         afficheur.value += xString 
-//         if(operation != undefined)
-//             afficheur.value += operation
-//         if(yString != undefined)
-//             afficheur.value += yString 
+        afficheur.value = number;
+    }else{
+        if(xString != undefined)
+        afficheur.value += xString 
+        if(operation != undefined)
+            afficheur.value += operation
+        if(yString != undefined)
+            afficheur.value += yString 
 
-//         }
+        }
  
 
-// }
+}
 
 
 // function Operation(operationParam){
