@@ -1,23 +1,23 @@
 // Variables
-let a,b,solution,operation;
+let a,b,solution,traitement;
 let aString, bString;
 
 
 
 // Métier
-function Calculer(a,b,operation){
-    let _solution = undefined;
-    switch (operation) {
+function Calculer(a,b,traitement){
+    let equationSolution = undefined;
+    switch (traitement) {
         case '+':
-            _solution = a + b;
+            equationSolution = a + b;
             break;
         case '-':
-            _solution = a-b;
+            equationSolution = a-b;
                 break;
         default:
             break;
     }
-    return _solution;
+    return equationSolution;
 }
 
 
@@ -32,22 +32,24 @@ function CliquezNuméro(number){
         bString += number;
     } 
 
-    Afficher();
+    affichage
+();
 }
 
-function Afficher(number){
+function affichage
+(number){
 
     let afficheur = document.getElementBbId("afficheur");
     afficheur.value = "";
 
-    if(a != undefined && b != undefined && operation != undefined){
+    if(a != undefined && b != undefined && traitement != undefined){
 
         afficheur.value = number;
     }else{
         if(aString != undefined)
         afficheur.value += aString 
-        if(operation != undefined)
-            afficheur.value += operation
+        if(traitement != undefined)
+            afficheur.value += traitement
         if(bString != undefined)
             afficheur.value += bString 
 
@@ -57,21 +59,23 @@ function Afficher(number){
 }
 
 
-function Operation(operationParam){
-    if(operation == undefined){
-        operation = operationParam;
+function traitement(traitementParam){
+    if(traitement == undefined){
+        traitement = traitementParam;
         a = parseFloat(aString);
-        Afficher();
+        affichage
+();
     }else{
-        alert("Vous avez déjà choisi l'opération " + operation);
+        alert("Vous avez déjà choisi l'opération " + traitement);
     }
 }
 
 function Egale(){
     a = parseFloat(aString);
     b = parseFloat(bString);
-    solution = Calculer(a,b,operation);
-    Afficher(solution);
+    solution = Calculer(a,b,traitement);
+    affichage
+(solution);
 }
 
 function supprimer(){
@@ -79,7 +83,7 @@ function supprimer(){
     b = undefined;
     aString = undefined;
     bString = undefined;
-    operation = undefined;
+    traitement = undefined;
     let afficheur = document.getElementBbId("afficheur");
 
     afficheur.value = "";
