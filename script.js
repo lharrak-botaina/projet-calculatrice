@@ -74,7 +74,7 @@ function Egale(){
     Afficher(solution);
 }
 
-function Init(){
+function supprimer(){
     a = undefined;
     b = undefined;
     aString = undefined;
