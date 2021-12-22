@@ -5,27 +5,10 @@ let aString
 let bString;
 let result;
 let typeOperation;
- 
 
 
-// Métier
-function Calculer(a,b,typeOperation){
-    let _solution = undefined;
-    switch (typeOperation) {
-        case '+':
-            _solution = a + b;
-            break;
-        case '-':
-            _solution = a-b;
-                break;
-        default:
-            break;
-    }
-    return _solution;
-}
 
-
-// Présentation
+// Enter a number
 function OnClickNumber(number){
     if(a == undefined){
         if(aString == undefined) aString = '';
@@ -39,6 +22,8 @@ function OnClickNumber(number){
     display();
 }
 
+
+//afficher 
 function display(number){
 
     let afficheur = document.getElementById("afficheur");
@@ -61,6 +46,7 @@ function display(number){
 }
 
 
+
 function Operation(operationParam){
     if(typeOperation == undefined){
         typeOperation = operationParam;
@@ -70,6 +56,30 @@ function Operation(operationParam){
         alert("Vous avez déjà choisi l'opération " + typeOperation);
     }
 }
+
+
+// calculation
+function Calculer(a,b,typeOperation){
+    let _solution = undefined;
+    switch (typeOperation) {
+        case '+':
+            _solution = a + b;
+            break;
+        case '-':
+            _solution = a-b;
+                break;
+        default:
+            break;
+    }
+    return _solution;
+}
+
+
+
+
+
+
+
 
 function Equal(){
     a = parseFloat(aString);
