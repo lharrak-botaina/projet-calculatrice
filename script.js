@@ -36,10 +36,10 @@ function OnClickNumber(number){
         bString += number;
     } 
 
-    Afficher();
+    display();
 }
 
-function Afficher(number){
+function display(number){
 
     let afficheur = document.getElementById("afficheur");
     afficheur.value = "";
@@ -65,20 +65,20 @@ function Operation(operationParam){
     if(typeOperation == undefined){
         typeOperation = operationParam;
         a = parseFloat(aString);
-        Afficher();
+        display();
     }else{
         alert("Vous avez déjà choisi l'opération " + typeOperation);
     }
 }
 
-function Egale(){
+function Equal(){
     a = parseFloat(aString);
     b = parseFloat(bString);
     result = Calculer(a,b,typeOperation);
-    Afficher(result);
+    display(result);
 }
 
-function Init(){
+function claire(){
     a = undefined;
     b = undefined;
     aString = undefined;
