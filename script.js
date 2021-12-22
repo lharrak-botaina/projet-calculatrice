@@ -47,7 +47,7 @@ function display(number){
 
 
 
-function Operation(operationParam){
+ function Operation(operationParam){
     if(typeOperation == undefined){
         typeOperation = operationParam;
         a = parseFloat(aString);
