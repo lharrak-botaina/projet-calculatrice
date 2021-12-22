@@ -1,18 +1,22 @@
 // Variables
-let x,y,solution,operation;
-let xString, yString;
-
+let a
+let b
+let aString
+let bString;
+let result;
+let typeOperation;
+ 
 
 
 // Métier
-function Calculer(x,y,operation){
+function Calculer(a,b,typeOperation){
     let _solution = undefined;
-    switch (operation) {
+    switch (typeOperation) {
         case '+':
-            _solution = x + y;
+            _solution = a + b;
             break;
         case '-':
-            _solution = x-y;
+            _solution = a-b;
                 break;
         default:
             break;
@@ -22,14 +26,14 @@ function Calculer(x,y,operation){
 
 
 // Présentation
-function ClickNumber(number){
-    if(x == undefined){
-        if(xString == undefined) xString = '';
-        xString += number;
+function OnClickNumber(number){
+    if(a == undefined){
+        if(aString == undefined) aString = '';
+        aString += number;
     } 
     else {
-        if(yString == undefined) yString = '';
-        yString += number;
+        if(bString == undefined) bString = '';
+        bString += number;
     } 
 
     Afficher();
@@ -40,16 +44,16 @@ function Afficher(number){
     let afficheur = document.getElementById("afficheur");
     afficheur.value = "";
 
-    if(x != undefined && y != undefined && operation != undefined){
+    if(a != undefined && b != undefined && typeOperation != undefined){
 
         afficheur.value = number;
     }else{
-        if(xString != undefined)
-        afficheur.value += xString 
-        if(operation != undefined)
-            afficheur.value += operation
-        if(yString != undefined)
-            afficheur.value += yString 
+        if(aString != undefined)
+        afficheur.value += aString 
+        if(typeOperation != undefined)
+            afficheur.value += typeOperation
+        if(bString != undefined)
+            afficheur.value += bString 
 
         }
  
@@ -58,28 +62,28 @@ function Afficher(number){
 
 
 function Operation(operationParam){
-    if(operation == undefined){
-        operation = operationParam;
-        x = parseFloat(xString);
+    if(typeOperation == undefined){
+        typeOperation = operationParam;
+        a = parseFloat(aString);
         Afficher();
     }else{
-        alert("Vous avez déjà choisi l'opération " + operation);
+        alert("Vous avez déjà choisi l'opération " + typeOperation);
     }
 }
 
 function Egale(){
-    x = parseFloat(xString);
-    y = parseFloat(yString);
-    solution = Calculer(x,y,operation);
-    Afficher(solution);
+    a = parseFloat(aString);
+    b = parseFloat(bString);
+    result = Calculer(a,b,typeOperation);
+    Afficher(result);
 }
 
 function Init(){
-    x = undefined;
-    y = undefined;
-    xString = undefined;
-    yString = undefined;
-    operation = undefined;
+    a = undefined;
+    b = undefined;
+    aString = undefined;
+    bString = undefined;
+    typeOperation = undefined;
     let afficheur = document.getElementById("afficheur");
 
     afficheur.value = "";
