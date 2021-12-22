@@ -74,7 +74,7 @@ function Calculer(a,b,typeOperation){
          case '/':
              _solution=a/b;
          break
-
+         
         default:
             break;
     }
@@ -93,6 +93,8 @@ function Equal(){
     b = parseFloat(bString);
     result = Calculer(a,b,typeOperation);
     display(result);
+    
+        
 }
 //remove all
 
