@@ -6,27 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prototype calculatrice</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="text" id="afficheur">
-    <button onclick="OnClickNumber(1)">1</button>
-    <button onclick="OnClickNumber(2)">2</button>
-    <button onclick="OnClickNumber(3)">3</button>
-    <button onclick="OnClickNumber(4)">4</button>
-    <button onclick="OnClickNumber(5)">5</button>
-    <button onclick="OnClickNumber(6)">6</button>
-    <button onclick="OnClickNumber(7)">7</button>
-    <button onclick="OnClickNumber(8)">8</button>
-    <button onclick="OnClickNumber(9)">9</button>
-    <button onclick="OnClickNumber(0)">0</button>
+    <div>
+<div class="afficheur">
+        <input type="text" id="afficheur">
 
-
-    <button onclick="Operation('*')">*</button>
-    <button onclick="Operation('/')">/</button>
-
-    <button onclick="Operation('+')">+</button>
-    <button onclick="Operation('-')">-</button>
-    <button onclick="Equal()">=</button>
-    <button onclick="claire()">C</button>
+    </div>
+    <div class="btn">
+        
+        <div class="button-1">
+            <button onclick="OnClickNumber(1)">1</button>
+            <button onclick="OnClickNumber(2)">2</button>
+            <button onclick="OnClickNumber(3)">3</button>
+        </div>
+        <div  class="button-2">
+            <button onclick="OnClickNumber(4)">4</button>
+            <button onclick="OnClickNumber(5)">5</button>
+            <button onclick="OnClickNumber(6)">6</button>
+        </div>
+        <div  class="button-3">
+            <button onclick="OnClickNumber(7)">7</button>
+            <button onclick="OnClickNumber(8)">8</button>
+            <button onclick="OnClickNumber(9)">9</button>
+           
+        </div>
+        <div  class="button-4">
+            <button onclick="OnClickNumber(0)">0</button>
+            <button onclick="Operation('*')">*</button>
+            <button onclick="Operation('/')">/</button>
+        </div>
+        <div  class="button">
+            <button onclick="Operation('+')">+</button>
+            <button onclick="Operation('-')">-</button>
+            <button onclick="Equal()">=</button>
+            <button class="C" onclick="claire()">C</button>
+        </div>
+       
+        
+    
+        
+    </div>
+    </div>
+    
+    
 </body>
 </html>

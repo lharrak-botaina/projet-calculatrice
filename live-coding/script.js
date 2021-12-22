@@ -58,7 +58,7 @@ function Calculer(a,b,typeOperation){
         case '-':
           _solution=a-b;
         break;
-        default:alert("Enter a nother operation")
+        default:
         break;
 
     }
