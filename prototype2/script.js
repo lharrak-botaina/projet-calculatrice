@@ -1,65 +1,80 @@
-// Présentation
-let aString, bString;
-let calculatrice = new CalculatriceBLO();
+var aString;
+var bString;
+var calculatrice = new Calculatrice()
 
-function ClickNumber(number){
-    if(calculatrice.a == undefined){
-        if(aString == undefined) aString = '';
-        aString += number;
-    } 
-    else {
-        if(bString == undefined) bString = '';
-        bString += number;
-    } 
-    Afficher();
-}
 
-function Afficher(number){
 
-    let afficheur = document.getElementById("afficheur");
-    afficheur.value = "";
-    
-    if(calculatrice.a != undefined && calculatrice.b != undefined && calculatrice.typeOperation != undefined){
+function onClickNumber(number) {
 
-        afficheur.value = number;
-    }else{
-        if(aString != undefined)
-        afficheur.value += aString 
-        if(calculatrice.typeOperation != undefined)
-            afficheur.value += calculatrice.typeOperation     
-        if(bString != undefined)
-            afficheur.value += bString 
-
+    if (calculatrice.a == undefined) {
+        if (aString == undefined) {
+            aString = ""
         }
- 
-   
-}
+        aString += number
 
-function Operation(operationParam){
-    if(calculatrice.typeOperation == undefined){
-        calculatrice.typeOperation = operationParam;
-        calculatrice.a = parseFloat(aString);
-        Afficher();
-    }else{
-        alert("Vous avez déjà choisi l'opération " + calculatrice.typeOperation);
+    } else {
+        if (bString == undefined) {
+            bString = ""
+        }
+        bString += number
     }
+
+
+    // if (aString == undefined) {
+    //     aString = number
+    // } else {
+    //     bString = number
+    // }
+
+    display()
+}
+
+function display(number) {
+    var display = document.getElementById("display")
+    display.value = ''
+
+    if (calculatrice.a != undefined && calculatrice.b != undefined && calculatrice.operation != undefined) {
+        display.value = number
+    } else {
+        if (aString != undefined) {
+            display.value += aString
+        }
+        if (calculatrice.operation != undefined) {
+            display.value += calculatrice.operation
+        }
+        if (bString != undefined) {
+            display.value += bString
+        }
+    }
+
 }
 
 
+function onClickOperation(operationParm) {
+    if (calculatrice.operation == undefined) {
+        calculatrice.operation = operationParm
+        calculatrice.a = parseFloat(aString)
+    }
 
+    display()
+}
 
-
-function Egale(){
+function equal() {
     calculatrice.a = parseFloat(aString);
     calculatrice.b = parseFloat(bString);
-    calculatrice.Calculer();
-    Afficher(calculatrice.result);
+
+    calculatrice.calculate()
+
+    display(calculatrice.calculate())
+
 }
 
-function Init(){
-    calculatrice.Init();
+
+function resetValues() {
+    calculatrice.init()
     aString = undefined;
     bString = undefined;
-    let afficheur = document.getElementById("afficheur");
-    afficheur.value = "";
+    let display = document.getElementById("display");
+
+    display.value = "";
 }

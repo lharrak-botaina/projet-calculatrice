@@ -1,59 +1,65 @@
-// Métier
-class CalculatriceBLO {
-   
-    // Private attributes
+class Calculatrice {
     #_a;
     #_b;
-    #_result;
-    #_typeOperation;
+    #_result
+    #_operation
 
-    // Setters and getters
-    get a() {
-      return this._a  
+    get a(){
+        return this._a
     }
+
     set a(value){
-        this._a = value;
+        this._a = value
     }
-    get b() {
-        return this._b 
+
+
+    get b(){
+        return this._b
     }
+
     set b(value){
-          this._b = value;
+        this._b = value
     }
-    
-    get result() {
+
+    get operation(){
+        return this._operation
+    }
+
+    set operation(value){
+        this._operation = value
+    }
+
+    get result(){
         return this._result
     }
+
     set result(value){
-          this._result = value;
+        this._result = value
     }
 
-    get typeOperation() {
-        return this._typeOperation
-    }
-    set typeOperation(value){
-          this._typeOperation = value;
-    }
 
-    Calculer(){
-        this._result = undefined;
-        switch (this._typeOperation) {
+    calculate(){
+        this._result = undefined
+
+        switch(this._operation){
             case '+':
                 this._result = this._a + this._b;
                 break;
             case '-':
-                this. _result = this._a- this._b;
-                    break;
+                this._result = this._a - this._b;
+                break;
             default:
                 break;
         }
-        return this._result;
+
+        return this._result
     }
 
-    Init(){
+
+    init(){
         this._a = undefined;
         this._b = undefined;
-        this._typeOperation = undefined;
+        this._result = undefined;
+        this._operation = undefined;
     }
-
 }
