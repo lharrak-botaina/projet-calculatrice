@@ -45,6 +45,10 @@ function Operation(operationParam){
     }
 }
 
+
+
+
+
 function Egale(){
     calculatrice.x = parseFloat(xString);
     calculatrice.y = parseFloat(yString);
