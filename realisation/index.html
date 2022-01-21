@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prototype calculatrice</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
 <div class="afficheur">
-        <input type="text" id="afficheur">
+        <input type="text" id="display">
 
     </div>
     <div class="btn" >
@@ -34,16 +33,16 @@
         </div>
         <div  class="button-4">
             <button onclick="OnClickNumber(0)">0</button>
-            <button onclick="Operation('*')">*</button>
-            <button onclick="Operation('/')">/</button>
+            <button onclick="onClickOperation('*')">*</button>
+            <button onclick="onClickOperation('/')">/</button>
         </div>
         <div  class="button">
-            <button onclick="Operation('+')">+</button>
-            <button onclick="Operation('-')">-</button>
+            <button onclick="onClickOperation('+')">+</button>
+            <button onclick="onClickOperation('-')">-</button>
             <button onclick="Equal()">=</button>
             <button onclick="OnClickNumber('.')">.</button>
            
-            <button class="C" onclick="claire()">C</button>
+            <button class="C" onclick="resetValues()">C</button>
         </div>
        
         
@@ -51,7 +50,9 @@
         
     </div>
     </div>
-    
+    <script src="scriptOOP.js"></script>
+
+    <script src="script.js"></script>
     
 </body>
 </html>

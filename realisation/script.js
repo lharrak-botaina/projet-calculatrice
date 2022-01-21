@@ -1,110 +1,79 @@
-// Variables
-let a
-let b
-let aString
-let bString;
-let result;
-let typeOperation;
+var aString;
+var bString;
+var calculatrice = new Calculatrice()
 
 
 
-// Enter a number
-function OnClickNumber(number){
-    if(a == undefined){
-        if(aString == undefined) aString = '';
-        aString += number;
-    } 
-    else {
-        if(bString == undefined) bString = '';
-        bString += number;
-    } 
+function OnClickNumber(number) {
 
-    display();
-}
-
-
-//afficher 
-function display(number){
-
-    let afficheur = document.getElementById("afficheur");
-    afficheur.value = "";
-
-    if(a != undefined && b != undefined && typeOperation != undefined){
-
-        afficheur.value = number;
-    }else{
-        if(aString != undefined)
-        afficheur.value += aString 
-        if(typeOperation != undefined)
-            afficheur.value += typeOperation
-        if(bString != undefined)
-            afficheur.value += bString 
-
+    if (calculatrice.a == undefined) {
+        if (aString == undefined) {
+            aString = ""
         }
- 
+        aString += number
 
-}
-
-
-//operation 
- function Operation(operationParam){
-    if(typeOperation == undefined){
-        typeOperation = operationParam;
-        a = parseFloat(aString);
-        display();
-    }else{
-        alert("Vous avez déjà choisi l'opération " + typeOperation);
+    } else {
+        if (bString == undefined) {
+            bString = ""
+        }
+        bString += number
     }
-}
+    display()
 
+    // if (aString == undefined) {
+    //     aString = number
+    // } else {
+    //     bString = number
+    // }
 
-// calculation
-function Calculer(a,b,typeOperation){
-    let _solution = undefined;
-    switch (typeOperation) {
-        case '+':
-            _solution = a + b;
-            break;
-        case '-':
-            _solution = a-b;
-                break;
-         case '*':
-             _solution=a*b;
-         break
-         case '/':
-             _solution=a/b;
-         break
-         
-        default:
-            break;
-    }
-    return _solution;
-}
-
-
-
-
-
-
-
-
-function Equal(){
-    a = parseFloat(aString);
-    b = parseFloat(bString);
-    result = Calculer(a,b,typeOperation);
-    display(result);
     
-        
 }
-//remove all
 
-function claire(){
-    a = undefined;
-    b = undefined;
+function display(number) {
+    var display = document.getElementById("display")
+    display.value = ''
+
+    if (calculatrice.a != undefined && calculatrice.b != undefined && calculatrice.operation != undefined) {
+        display.value = number
+    } else {
+        if (aString != undefined) {
+            display.value += aString
+        }
+        if (calculatrice.operation != undefined) {
+            display.value += calculatrice.operation
+        }
+        if (bString != undefined) {
+            display.value += bString
+        }
+    }
+}
+
+
+function onClickOperation(operationParm) {
+    if (calculatrice.operation == undefined) {
+        calculatrice.operation = operationParm
+        calculatrice.a = parseFloat(aString)
+    }
+
+    display()
+}
+
+function Equal() {
+    calculatrice.a = parseFloat(aString);
+    calculatrice.b = parseFloat(bString);
+
+    calculatrice.calculate()
+
+    display(calculatrice.calculate())
+
+}
+
+
+function resetValues() {
+    calculatrice.init()
     aString = undefined;
     bString = undefined;
-    typeOperation = undefined;
-    let afficheur = document.getElementById("afficheur");
+    let display = document.getElementById("display");
 
-    afficheur.value = "";
+    display.value = "";
 }
