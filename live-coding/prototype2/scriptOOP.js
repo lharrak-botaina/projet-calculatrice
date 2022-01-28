@@ -50,7 +50,7 @@ class Calculatrice {
     }
 
 
-    resetValues(){
+    init(){
         this.#_a=undefined
         this.#_b=undefined
         this.#_operation = undefined
